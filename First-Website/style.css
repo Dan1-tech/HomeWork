@@ -1,0 +1,18 @@
+
+button{
+    background-color: #DAF765;
+    padding: 16px 32px;
+    border-radius: 8px;
+    color: #323843;
+    cursor: pointer;
+    border: none;
+    width: 50%;
+}
+#myImage{
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+}
+h1{
+    letter-spacing: 40px;
+}
