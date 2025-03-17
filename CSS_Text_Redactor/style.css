@@ -1,0 +1,90 @@
+
+.text1{
+    font-family:"Open Sans","Arial",sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    font-style:italic;
+    line-height: 30px;
+}
+.text2{
+    text-decoration: line-through;
+    font-weight: bold;
+}
+.text3{
+    text-align: center;
+    font-size: 30px;
+}
+.text4{
+    word-spacing: 30px;
+    color: rgb(128, 48, 219);
+    text-decoration: wavy overline rgb(183, 0, 255);
+}
+.text5{
+    letter-spacing: 5px;
+    text-decoration: underline ;
+    text-decoration-style: double;
+    text-decoration-thickness: 3px;
+}
+.text6{
+    text-decoration: overline underline rgb(196, 3, 3);
+    text-decoration-style: dotted ;
+    text-align: right;
+    font-style: oblique;
+}
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+.text7{
+    font-size: 30px;
+    background: linear-gradient(
+        to right,
+        #7953cd 20%,
+        #00affa 30%,
+        #01cd2d 40%,
+        #e74d1e 50%
+        );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+    @keyframes move {
+    0% {
+    transform: translateX(0);
+    }
+    50% {
+        transform: translateX(2000px);
+    }
+    100% {
+    transform: translateX(0px);
+    }
+    }
+.text8{
+    font-size: 24px;
+    font-weight: bold;
+    color: #bdc01d;
+    animation: move 4s infinite;
+}
+@keyframes disappear{
+    0% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.text9{
+    font-size: 3em;
+    color:rgb(2, 5, 7);
+    animation: disappear 5s infinite;
+    transition: opacity 5s;
+}
