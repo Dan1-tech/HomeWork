@@ -1,0 +1,21 @@
+
+.container{
+    box-sizing:border-box;
+    background-color: rgb(234, 248, 248);
+    overflow: auto;
+    border-radius:  10px 0  0 10px;
+    border: 1px solid black;
+    max-width: 1000px;
+    max-height: 400px;
+}
+.card{
+    box-sizing: inherit;
+    display: inline-block;
+    background-color:lightblue;
+    border-radius: 20px;
+    max-width: 200px;
+    margin: 5px 5px;
+    padding: 10px 10px 5px 20px;
+    box-shadow: inset 0 0 5px black;
+    line-height: 20px;
+}
