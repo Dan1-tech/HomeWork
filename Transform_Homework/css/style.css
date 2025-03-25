@@ -1,0 +1,65 @@
+.wrapper {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.quads {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.quads__quad {
+    width: 200px;
+    height: 200px;
+    background: #757272;
+    border-radius: 5px;
+}
+
+.quads__quad--red {
+    background: linear-gradient(130deg, rgb(252, 67, 67), rgb(215, 106, 47));
+}
+.quads__quad--green {
+    background: linear-gradient(130deg, rgb(25, 186, 38), rgb(47, 215, 167));
+}
+.quads__quad--blue {
+    background: linear-gradient(130deg, rgb(33, 25, 186), rgb(160, 44, 193));
+}
+
+.area {
+    flex: 1 0 auto;
+    border: 5px dashed #333;
+    height: 800px;
+}
+
+.area__place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: 900;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    border-radius: 5px;
+    border: 5px dashed #8f8787;
+    color: #8f8787;
+}
+
+/* ================== Выполнение дз ниже =================== */
+
+.quads__quad--red {
+    transform: translate(645px,595px);
+}
+.quads__quad--green{
+    
+    transform:translate(354px, 138px)rotate(115deg);
+    transform-origin:top right;   
+}
+
+.quads__quad--blue{
+    transform:translate(1135px, 5px)scale(-2);
+    transform-origin:top left;
+}
