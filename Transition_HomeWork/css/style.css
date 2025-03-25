@@ -1,0 +1,54 @@
+body {
+    background-color: #1a1a1c;
+    color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box {
+    background: #3b3a3d;
+    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7de07d;
+    font-size: 30px;
+}
+
+.box span {
+    opacity: 0;
+}
+
+.box__scale {
+    position: absolute;
+    top: -100px;
+    left: -300px;
+    right: 600px;
+    height: 30px;
+    background: #fff;
+}
+
+.box:hover .box__scale {
+    right: -300px;
+}
+
+.box:hover span {
+    opacity: 1;
+}
+
+/* ================== Выполнение дз ниже =================== */
+
+.box__scale{
+    transition: 3s;
+}
+.box span{
+    transition-delay: 3s;
+}
