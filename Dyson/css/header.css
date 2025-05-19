@@ -1,0 +1,122 @@
+.header{
+    background:var(--accent-black);
+    padding-top: 6px ;
+    padding-bottom: 7px;
+}
+.header__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo{
+    display: block;
+    max-width: 183px;
+    z-index: 11;
+}
+
+.header__logo svg {
+    width: 100%;
+}
+
+.header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: var(--general-white);
+    font-family:"NAMU PRO";
+    font-size: 20px;
+    font-weight: 900;
+}
+.header__nav-link{
+    transition: var(--transition);
+}
+.header__nav-link:hover{
+    color:var(--accent-color);
+}
+
+.cart {
+    transition: var(--transition);
+    display: flex;
+    align-items:end;
+}
+.cart path{
+    transition: var(--transition);
+}
+.cart:hover path{
+    stroke:var(--accent-color);
+}
+.cart-status {
+    width: 19px;
+    height: 19px;
+    margin-bottom: 2hpx;
+    color:var(--accent-black);
+    background:var(--general-white);
+    border-radius:50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.hidden{
+    display:none;
+}
+.cart-count{
+    font-family:"Open sans";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+}
+.burger-icon {
+    display: none;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+.burger-icon:hover span,
+.burger-icon:hover span::before,
+.burger-icon:hover span::after{
+    background-color:var(--accent-color);
+}
+
+
+.burger-icon span,
+.burger-icon span::before,
+.burger-icon span::after{
+    display: block;
+    width: 30px;
+    height: 3px;
+    border-radius: 100px;
+    background-color: var(--general-white);
+    transition: var(--transition);
+}
+
+.burger-icon span{
+    position: relative;
+}
+.burger-icon span::before,
+.burger-icon span::after{
+    content:"";
+    position: absolute;
+}
+
+.burger-icon span::before{
+    top:-8px;
+}
+.burger-icon span::after{
+    bottom:-8px;
+}
+
+.body--opened-menu .burger-icon span{
+    background-color: transparent;
+}
+
+.body--opened-menu .burger-icon span::before{
+    top:0px;
+    transform: rotate(45deg);
+}
+.body--opened-menu .burger-icon span::after{
+    bottom:0px;
+    transform: rotate(-45deg);
+}
+

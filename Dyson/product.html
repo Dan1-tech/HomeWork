@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dryers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link href="css/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/product.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <a class="burger-icon" href="#">
+                        <span></span>
+                    </a>
+                    <a class="header__logo" href="#">
+                        <svg width="183" height="77" viewBox="9 0 180 77" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="183" height="77" fill="url(#pattern0_388_4580)" />
+                            <defs>
+                                <pattern id="pattern0_388_4580" patternContentUnits="objectBoundingBox" width="1"
+                                    height="1">
+                                    <use xlink:href="#image0_388_4580" transform="scale(0.000595238 0.00141466)" />
+                                </pattern>
+                                <image id="image0_388_4580" width="1680" height="707" preserveAspectRatio="none"
+                                    xlink:href="data:image/png;base64,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" />
+                            </defs>
+                        </svg>
+                    </a>
+                    <nav class="header__nav">
+                        <ul class="header__nav-list">
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="#opinions">О нас</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="#">Доставка и оплата</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="#product-buy">Регистрация продукта</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="#benefits">Сервис</a>
+                            </li>
+                            <li class="header__nav-item">
+                                <a class="header__nav-link" href="#">Сертификаты и лицензии</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="product-actions">
+                        <a class="wishlist" href="#">
+                            <svg width="34" height="30" viewBox="0 0 34 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="wishlist-status hidden">
+                                <span class="wishlist-count">0</span>
+                            </div>
+                        </a>
+                        <a class="cart" href="#">
+                            <svg width="37" height="36" viewBox="0 0 37 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M5.27979 13.5C5.27979 11.8431 6.62293 10.5 8.27979 10.5H29.2798C30.9367 10.5 32.2798 11.8431 32.2798 13.5V30C32.2798 31.6569 30.9367 33 29.2798 33H8.27979C6.62293 33 5.27979 31.6569 5.27979 30V13.5Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M12.7798 15V9C12.7798 5.68629 15.4661 3 18.7798 3C22.0934 3 24.7798 5.68629 24.7798 9V14.5332"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class="cart-status hidden">
+                                <span class="cart-count">0</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__navigation">
+                <div class="container">
+                    <ul class="main__navigation-list">
+                        <li class="main__navigation-item">
+                            <a class="main__navigation-link" href="index.html">Главная</a>
+                        </li>
+                        <li class="main__navigation-item">
+                            <a class="main__navigation-link" href="dryers.html">/ Мультистайлеры Dyson
+                                <span>/</span></a>
+                        </li>
+                        <li class="main__navigation-item--active">
+                            <a class="main__navigation-link" href="product.html"> Фен Dyson Supersonic HD07 с 5
+                                насадками в дорожном чехле и расческами</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="main__product">
+                <div class="container">
+                    <div class="product__inner">
+                        <div class="product__thumbnails">
+                            <div class="product__thumbnails-container">
+                                <button class="arrow-up">
+                                    <svg width="37" height="29" viewBox="0 0 37 29" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_d_91_6905)">
+                                            <path
+                                                d="M17.7766 5.7578L9.61364 14.3095C9.0062 14.9459 9.45725 16 10.337 16H26.663C27.5427 16 27.9938 14.9459 27.3864 14.3095L19.2234 5.7578C18.8294 5.3451 18.1706 5.3451 17.7766 5.7578Z"
+                                                fill="#C5358C" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_91_6905" x="0.334961" y="0.448242" width="36.3301"
+                                                height="28.5518" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="4.5" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0.0666667 0 0 0 0 0.0666667 0 0 0 0 0.0666667 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow_91_6905" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_dropShadow_91_6905" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <div class="thumbnails-wrapper desktop-thumbnails">
+                                    <div class="thumbnails" id="thumbnails">
+                                        <img class="thumb" src="images/products/all.components.jpg"
+                                            data-main-image="images/products/all.components_large.jpg" alt="thumb1">
+                                        <img class="thumb" src="images/products/component1_large.jpg"
+                                            data-main-image="images/products/component1_large.jpg" alt="thumb2">
+                                        <img class="thumb" src="images/products/component2_large.jpg"
+                                            data-main-image="images/products/component2_large.jpg" alt="thumb3">
+                                        <img class="thumb" src="images/products/component3_large.jpg"
+                                            data-main-image="images/products/component3_large.jpg" alt="thumb4">
+                                        <img class="thumb" src="images/products/component4_large.jpg"
+                                            data-main-image="images/products/component4_large.jpg" alt="thumb4">
+                                        <img class="thumb" src="images/products/girl_component.jpg"
+                                            data-main-image="images/products/girl_component.jpg" alt="thumb4">
+                                    </div>
+                                </div>
+                                <div class="swiper__thumbnails mobile-thumbnails">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide thumb-active"><img
+                                                src="images/products/all.components.jpg" alt="thumb1"></div>
+                                        <div class="swiper-slide"><img src="images/products/component1_large.jpg"
+                                                alt="thumb2"></div>
+                                        <div class="swiper-slide"><img src="images/products/component2_large.jpg"
+                                                alt="thumb3"></div>
+                                        <div class="swiper-slide"><img src="images/products/component3_large.jpg"
+                                                alt="thumb4"></div>
+                                        <div class="swiper-slide"><img src="images/products/component4_large.jpg"
+                                                alt="thumb5"></div>
+                                        <div class="swiper-slide"><img src="images/products/girl_component.jpg"
+                                                alt="thumb6"></div>
+                                    </div>
+                                </div>
+                                <button class="arrow-down">
+                                    <svg width="37" height="29" viewBox="0 0 37 29" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_d_91_6897)">
+                                            <path
+                                                d="M17.7766 15.2422L9.61364 6.69048C9.0062 6.05411 9.45725 5 10.337 5H26.663C27.5427 5 27.9938 6.05411 27.3864 6.69048L19.2234 15.2422C18.8294 15.6549 18.1706 15.6549 17.7766 15.2422Z"
+                                                fill="#C5358C" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_d_91_6897" x="0.334961" y="0" width="36.3301"
+                                                height="28.5518" filterUnits="userSpaceOnUse"
+                                                color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                    result="hardAlpha" />
+                                                <feOffset dy="4" />
+                                                <feGaussianBlur stdDeviation="4.5" />
+                                                <feComposite in2="hardAlpha" operator="out" />
+                                                <feColorMatrix type="matrix"
+                                                    values="0 0 0 0 0.0666667 0 0 0 0 0.0666667 0 0 0 0 0.0666667 0 0 0 0.25 0" />
+                                                <feBlend mode="normal" in2="BackgroundImageFix"
+                                                    result="effect1_dropShadow_91_6897" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_dropShadow_91_6897" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="product__main-image--desktop">
+                                <div class="main-image-wrapper">
+                                    <img class="main-image" src="images/products/all.components_large.jpg"
+                                        alt="main product">
+                                </div>
+                                <svg class="heart-icon heart-image" width="34" height="30" viewBox="0 0 34 30"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="swiper product__main-image--mobile">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img src="images/products/all.components_large.jpg"
+                                                alt="">
+                                            <svg class="heart-icon--swiper" width="30" height="30" viewBox="0 0 30 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.4156 28.0701L4.5791 17.827C1.80843 14.9419 1.98291 10.2111 4.95791 7.55576C7.90932 4.9214 12.3844 5.43296 14.7168 8.67128L15.1089 9.21569L15.501 8.67128C17.8334 5.43296 22.3084 4.9214 25.2599 7.55576C28.2349 10.2111 28.4094 14.9419 25.6386 17.827L15.8021 28.0701C15.4193 28.4688 14.7985 28.4688 14.4156 28.0701Z"
+                                                    stroke="#111111" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-slide"><img src="images/products/component1_large.jpg"
+                                                alt="">
+                                            <svg class="heart-icon--swiper" width="30" height="30" viewBox="0 0 30 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.4156 28.0701L4.5791 17.827C1.80843 14.9419 1.98291 10.2111 4.95791 7.55576C7.90932 4.9214 12.3844 5.43296 14.7168 8.67128L15.1089 9.21569L15.501 8.67128C17.8334 5.43296 22.3084 4.9214 25.2599 7.55576C28.2349 10.2111 28.4094 14.9419 25.6386 17.827L15.8021 28.0701C15.4193 28.4688 14.7985 28.4688 14.4156 28.0701Z"
+                                                    stroke="#111111" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-slide"><img src="images/products/component2_large.jpg"
+                                                alt="">
+                                            <svg class="heart-icon--swiper" width="30" height="30" viewBox="0 0 30 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.4156 28.0701L4.5791 17.827C1.80843 14.9419 1.98291 10.2111 4.95791 7.55576C7.90932 4.9214 12.3844 5.43296 14.7168 8.67128L15.1089 9.21569L15.501 8.67128C17.8334 5.43296 22.3084 4.9214 25.2599 7.55576C28.2349 10.2111 28.4094 14.9419 25.6386 17.827L15.8021 28.0701C15.4193 28.4688 14.7985 28.4688 14.4156 28.0701Z"
+                                                    stroke="#111111" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-slide"><img src="images/products/component3_large.jpg"
+                                                alt="">
+                                            <svg class="heart-icon--swiper" width="30" height="30" viewBox="0 0 30 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.4156 28.0701L4.5791 17.827C1.80843 14.9419 1.98291 10.2111 4.95791 7.55576C7.90932 4.9214 12.3844 5.43296 14.7168 8.67128L15.1089 9.21569L15.501 8.67128C17.8334 5.43296 22.3084 4.9214 25.2599 7.55576C28.2349 10.2111 28.4094 14.9419 25.6386 17.827L15.8021 28.0701C15.4193 28.4688 14.7985 28.4688 14.4156 28.0701Z"
+                                                    stroke="#111111" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-slide"><img src="images/products/component4_large.jpg"
+                                                alt="">
+                                            <svg class="heart-icon--swiper" width="30" height="30" viewBox="0 0 30 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.4156 28.0701L4.5791 17.827C1.80843 14.9419 1.98291 10.2111 4.95791 7.55576C7.90932 4.9214 12.3844 5.43296 14.7168 8.67128L15.1089 9.21569L15.501 8.67128C17.8334 5.43296 22.3084 4.9214 25.2599 7.55576C28.2349 10.2111 28.4094 14.9419 25.6386 17.827L15.8021 28.0701C15.4193 28.4688 14.7985 28.4688 14.4156 28.0701Z"
+                                                    stroke="#111111" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-slide"><img src="images/products/girl_component.jpg" alt="">
+                                            <svg class="heart-icon--swiper" width="30" height="30" viewBox="0 0 30 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M14.4156 28.0701L4.5791 17.827C1.80843 14.9419 1.98291 10.2111 4.95791 7.55576C7.90932 4.9214 12.3844 5.43296 14.7168 8.67128L15.1089 9.21569L15.501 8.67128C17.8334 5.43296 22.3084 4.9214 25.2599 7.55576C28.2349 10.2111 28.4094 14.9419 25.6386 17.827L15.8021 28.0701C15.4193 28.4688 14.7985 28.4688 14.4156 28.0701Z"
+                                                    stroke="#111111" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="custom-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="product__main-info">
+                            <h2 class="product__main-title">
+                                Фен Dyson Supersonic HD07 с 5 насадками в дорожном чехле и расческами
+                            </h2>
+                            <div class="product__main-text-wrapper">
+                                <p class="product__main-text truncated-hover" id="description">
+                                    Главное отличие фена Dyson в быстром и безопасном высушивании волос. В рукоятку
+                                    встроен
+                                    датчик температуры, благодаря которому она не поднимается выше 100 градусов. Это
+                                    позволяет пользоваться устройством без вреда. В комплекте 5 насадок, которые
+                                    подходят
+                                    для укладки и сушки на разных режимах. Есть практичный черный чехол, предназначенный
+                                    для
+                                    аккуратной перевозки и хранения. Расчески можно использовать отдельно от девайса или
+                                    во
+                                    время сушки с целью предотвратить запутывание.
+                                </p>
+                            </div>
+                            <div>
+                                <button id="toggleText">
+                                    Показать ещё
+                                </button>
+                            </div>
+                            <div class="availability">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                </svg>
+                                <span>В наличии</span>
+                            </div>
+                            <div class="product__main-price">
+                                <div class="main-price">
+                                    <span class="old-price">
+                                        51 990Р
+                                    </span>
+                                    <span class="new-price">
+                                        47 990 Р
+                                    </span>
+                                </div>
+                                <svg class="heart-icon heart-added" width="40" height="40" viewBox="0 0 34 30"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                        stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="product__add-to-cart">
+                                <div class="product__quantity">
+                                    <button class="quantity-btn minus ">
+                                        <svg width="18" height="4" viewBox="0 0 20 2" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 1H1" stroke="#ABABAB" stroke-width="2"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="quantity-btn plus">
+                                        <svg width="18" height="18" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button class="add-to-cart">
+                                    В корзину
+                                    <svg width="37" height="36" viewBox="0 0 37 36" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.27979 13.5C5.27979 11.8431 6.62293 10.5 8.27979 10.5H29.2798C30.9367 10.5 32.2798 11.8431 32.2798 13.5V30C32.2798 31.6569 30.9367 33 29.2798 33H8.27979C6.62293 33 5.27979 31.6569 5.27979 30V13.5Z"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12.7798 15V9C12.7798 5.68629 15.4661 3 18.7798 3C22.0934 3 24.7798 5.68629 24.7798 9V14.5332"
+                                            stroke="white" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__tabbed">
+                <div class="container">
+                    <div class="tabbed__scroll-wrapper">
+                        <ul class="tabbed__list">
+                            <li class="tabbed__item">
+                                <button class="tab-btn active" data-tab="0" type="button">Комплектация</button>
+                            </li>
+                            <li class="tabbed__item">
+                                <button class="tab-btn" data-tab="1" type="button">Характеристики</button>
+                            </li>
+                            <li class="tabbed__item">
+                                <button class="tab-btn" data-tab="2" type="button">Доставка</button>
+                            </li>
+                            <li class="tabbed__item">
+                                <button class="tab-btn" data-tab="3" type="button">Оплата</button>
+                            </li>
+                            <li class="tabbed__item">
+                                <button class="tab-btn" data-tab="4" type="button">Правила эксплуатации</button>
+                            </li>
+                            <li class="tabbed__item">
+                                <button class="tab-btn" data-tab="5" type="button">Гарантия</button>
+                            </li>
+                            <li class="tabbed__item">
+                                <button class="tab-btn" data-tab="6" type="button">Сертификаты</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tabbed__inner">
+                        <div class="tab-slider__wrapper">
+                            <div class="tab-slider">
+                                <div class="tab-slide active">
+                                    <div class="tab-slide__components">
+                                        <div class="tab-slide__item tab-slide__item--1">
+                                            <img src="images/products/component1_large.jpg" alt="Комплектация">
+                                            <div class="tab-slide__content">
+                                                <h3 class="tab-slide__title">Комплектация</h3>
+                                                <p class="tab-slide__text">
+                                                    Главное отличие фена Dyson в быстром и безопасном высушивании волос.
+                                                    В
+                                                    рукоятку встроен датчик температуры, благодаря которому она не
+                                                    поднимается.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-slide__item tab-slide__item--2">
+                                            <img src="images/products/component2_large.jpg" alt="Комплектация">
+                                            <div class="tab-slide__content--2">
+                                                <h3 class="tab-slide__title">Комплектация</h3>
+                                                <p class="tab-slide__text">
+                                                    Главное отличие фена Dyson в быстром и безопасном высушивании волос.
+                                                    В
+                                                    рукоятку встроен датчик температуры, благодаря которому она не
+                                                    поднимается выше 100 градусов.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-slide__item tab-slide__item--3">
+                                            <img src="images/products/component3_large.jpg" alt="Комплектация">
+                                            <div class="tab-slide__content">
+                                                <h3 class="tab-slide__title">Комплектация</h3>
+                                                <p class="tab-slide__text">
+                                                    Главное отличие фена Dyson в быстром и безопасном высушивании волос.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="tab-slide__item tab-slide__item--4">
+                                            <img src="images/products/component4_large.jpg" alt="Комплектация">
+                                            <div class="tab-slide__content">
+                                                <h3 class="tab-slide__title">Комплектация</h3>
+                                                <p class="tab-slide__text">
+                                                    Главное отличие фена Dyson в быстром и безопасном высушивании волос.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-slide">
+                                    <div class="tab-slide__characteristics">
+                                        <ul class="tab-slide__characteristics-list">
+                                            <li class="tab-slide__characteristics-item">
+                                                <span class="tab-slide__characteristics-name">Длина шнура</span>
+                                                <span class="tab-slide__characteristics-value">2,2 м</span>
+                                            </li>
+                                            <li class="tab-slide__characteristics-item">
+                                                <span class="tab-slide__characteristics-name">Время беспроводной
+                                                    работы</span>
+                                                <span class="tab-slide__characteristics-value">30 минут</span>
+                                            </li>
+                                            <li class="tab-slide__characteristics-item">
+                                                <span class="tab-slide__characteristics-name">Время для полного
+                                                    заряда</span>
+                                                <span class="tab-slide__characteristics-value">70 минут</span>
+                                            </li>
+                                            <li class="tab-slide__characteristics-item">
+                                                <span class="tab-slide__characteristics-name">Напряжение</span>
+                                                <span class="tab-slide__characteristics-value">10.8-16.8 В</span>
+                                            </li>
+                                            <li class="tab-slide__characteristics-item">
+                                                <span class="tab-slide__characteristics-name">Время для зарядки на 90
+                                                    %</span>
+                                                <span class="tab-slide__characteristics-value">40 минут</span>
+                                            </li>
+                                            <li class="tab-slide__characteristics-item">
+                                                <span class="tab-slide__characteristics-name">Вес</span>
+                                                <span class="tab-slide__characteristics-value">1 кг</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-slide">
+                                    <div class="tab-slide__delivery" id="delivery">
+                                        <div class="tab-slide__delivery-info">
+                                            <div class="tab-slide__delivery-city">
+                                                <h2>Доставка по Москве</h2>
+                                                <ul class="tab-slide__delivery-list">
+                                                    <li>
+                                                        Доставка продукции по Москве и МО в течении 2 часов в день
+                                                        заказа
+                                                        или в любой удобный день
+                                                    </li>
+                                                    <li>
+                                                        Стоймость доставки по Москве - 0 р.
+                                                    </li>
+                                                    <li>
+                                                        Стоймость доставки за МКАД - 500 р. до 10 км
+                                                    </li>
+                                                    <li>
+                                                        Стоймость доставки более 10 км - рассчитывается отдельно
+                                                        оператором
+                                                    </li>
+                                                    <li>
+                                                        Оплата возможна при получении курьеру после проверки продукции
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-slide__delivery-region">
+                                                <h2>Доставка в регионы</h2>
+                                                <ul class="tab-slide__delivery-list">
+                                                    <li>
+                                                        Стоймость доставки в регионы - осущивается компанией boxberry и
+                                                        рассчитывается отдельно оператором
+                                                    </li>
+                                                    <li>
+                                                        Оплата возможна при получении курьеру после проверки продукции
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="tab-slide__delivery-map-title">
+                                            <h2>Ближайшие пункты выдачи</h2>
+                                        </div>
+                                        <div class="tab-slide__delivery-map">
+                                            <div class="tab-slide__delivery-map-inner">
+                                                <div class="sidebar__search--mobile">
+                                                    <input type="text" placeholder="Введите адрес" />
+                                                    <div class="address-search">
+                                                        <svg width="17" height="18" viewBox="0 0 17 18" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M9.93124 5.96838C9.93124 8.16092 8.1549 9.93675 5.96562 9.93675C3.77634 9.93675 2 8.16092 2 5.96838C2 3.77583 3.77634 2 5.96562 2C8.1549 2 9.93124 3.77583 9.93124 5.96838ZM8.79991 11.2214C7.95682 11.6777 6.99146 11.9368 5.96562 11.9368C2.6709 11.9368 0 9.26462 0 5.96838C0 2.67213 2.6709 0 5.96562 0C9.26034 0 11.9312 2.67213 11.9312 5.96838C11.9312 7.51171 11.3457 8.91823 10.3848 9.97772L16.9989 16.5845L15.5854 17.9995L8.79991 11.2214Z"
+                                                                fill="white" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div id="map"></div>
+                                                <div class="sidebar">
+                                                    <div class="sidebar__search">
+                                                        <input type="text" placeholder="Введите адрес" />
+                                                        <div class="address-search">
+                                                            <svg width="17" height="18" viewBox="0 0 17 18" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                    d="M9.93124 5.96838C9.93124 8.16092 8.1549 9.93675 5.96562 9.93675C3.77634 9.93675 2 8.16092 2 5.96838C2 3.77583 3.77634 2 5.96562 2C8.1549 2 9.93124 3.77583 9.93124 5.96838ZM8.79991 11.2214C7.95682 11.6777 6.99146 11.9368 5.96562 11.9368C2.6709 11.9368 0 9.26462 0 5.96838C0 2.67213 2.6709 0 5.96562 0C9.26034 0 11.9312 2.67213 11.9312 5.96838C11.9312 7.51171 11.3457 8.91823 10.3848 9.97772L16.9989 16.5845L15.5854 17.9995L8.79991 11.2214Z"
+                                                                    fill="white" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <div class="point">
+                                                        <h3>Пункт выдачи</h3>
+                                                        <p>Шкиперский проток, 16 лит А<br>Гавань, Василеостровский
+                                                            район,
+                                                            Санкт-Петербург</p>
+                                                        <span class="status open"><svg width="13" height="13"
+                                                                viewBox="0 0 13 13" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                                            </svg> Открыто</span>
+                                                    </div>
+                                                    <div class="point">
+                                                        <h3>Пункт выдачи</h3>
+                                                        <p>Шкиперский проток, 16 лит А<br>Гавань, Василеостровский
+                                                            район,
+                                                            Санкт-Петербург</p>
+                                                        <span class="status open"><svg width="13" height="13"
+                                                                viewBox="0 0 13 13" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                                            </svg> Открыто</span>
+                                                    </div>
+                                                    <div class="point">
+                                                        <h3>Пункт выдачи</h3>
+                                                        <p>Шкиперский проток, 16 лит А<br>Гавань, Василеостровский
+                                                            район,
+                                                            Санкт-Петербург</p>
+                                                        <span class="status open"><svg width="13" height="13"
+                                                                viewBox="0 0 13 13" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                                            </svg> Открыто</span>
+                                                    </div>
+                                                    <div class="point">
+                                                        <h3>Пункт выдачи</h3>
+                                                        <p>Шкиперский проток, 16 лит А<br>Гавань, Василеостровский
+                                                            район,
+                                                            Санкт-Петербург</p>
+                                                        <span class="status open"><svg width="13" height="13"
+                                                                viewBox="0 0 13 13" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                                            </svg> Открыто</span>
+                                                    </div>
+                                                    <div class="point">
+                                                        <h3>Пункт выдачи</h3>
+                                                        <p>Шкиперский проток, 16 лит А<br>Гавань, Василеостровский
+                                                            район,
+                                                            Санкт-Петербург</p>
+                                                        <span class="status open"><svg width="13" height="13"
+                                                                viewBox="0 0 13 13" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                                            </svg> Открыто</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-slide__delivery-calculator">
+                                            <h2>Рассчет стоимости курьерской доставки </h2>
+                                            <form class="tab-slide__delivery-form">
+                                                <div class="tab-slide__delivery-form-item">
+                                                    <input type="text" placeholder="Введите город">
+                                                </div>
+                                                <div class="tab-slide__delivery-form-item">
+                                                    <input type="number" placeholder="Сумма заказа">
+                                                </div>
+                                                <div class="tab-slide__delivery-form-item">
+                                                    <input type="text" placeholder="Срок доставки">
+                                                </div>
+                                                <div class="tab-slide__delivery-form-button">
+                                                    <button type="submit">Рассчитать</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-slide">
+                                    <div class="tab-slide__payment">
+                                        <p class="tab-slide__payment-text">
+                                            Главное отличие фена Dyson в быстром и безопасном высушивании волос. В
+                                            рукоятку встроен датчик температуры, благодаря которому она не поднимается
+                                            выше 100 градусов. Главное отличие фена Dyson в быстром и безопасном
+                                            высушивании волос.
+                                        </p>
+                                        <p class="tab-slide__payment-list--title">
+                                            Способы оплаты:
+                                        </p>
+                                        <ol class="tab-slide__payment-list">
+                                            <li>Наличные</li>
+                                            <li>Безналичные</li>
+                                            <li>Карта</li>
+                                            <li>Рассрочка</li>
+                                        </ol>
+                                        <p class="tab-slide__payment-text">
+                                            Главное отличие фена Dyson в быстром и безопасном высушивании волос.
+                                            В рукоятку встроен датчик температуры, благодаря которому она не
+                                            поднимается выше 100 градусов. Главное отличие фена Dyson в быстром и
+                                            безопасном высушивании волос.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tab-slide">
+                                    <div class="tab-slide__rules">
+                                        <p class="tab-slide__rules-text">
+                                            Главное отличие фена Dyson в быстром и безопасном высушивании волос. В
+                                            рукоятку встроен датчик температуры, благодаря которому она не поднимается
+                                            выше 100 градусов. Главное отличие фена Dyson в быстром и безопасном
+                                            высушивании волос. В рукоятку встроен датчик температуры, благодаря которому
+                                            она не поднимается выше 100 градусов. Главное отличие фена Dyson в быстром и
+                                            безопасном высушивании волос. В рукоятку встроен датчик температуры,
+                                            благодаря которому она не поднимается выше 100 градусов. Главное отличие
+                                            фена Dyson в быстром и безопасном высушивании волос. В рукоятку встроен
+                                            датчик температуры, благодаря которому она не поднимается выше 100 градусов.
+                                            Главное отличие фена Dyson в быстром и безопасном высушивании волос. В
+                                            рукоятку встроен датчик температуры, благодаря которому она не поднимается
+                                            выше 100 градусов.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tab-slide">
+                                    <div class="tab-slide__garantee">
+                                        <p class="tab-slide__garantee-text">
+                                            Главное отличие фена Dyson в быстром и безопасном высушивании волос. В
+                                            рукоятку встроен датчик температуры, благодаря которому она не поднимается
+                                            выше 100 градусов. Главное отличие фена Dyson в быстром и безопасном
+                                            высушивании волос. В рукоятку встроен датчик температуры, благодаря которому
+                                            она не поднимается выше 100 градусов. Главное отличие фена Dyson в быстром и
+                                            безопасном высушивании волос. В рукоятку встроен датчик температуры,
+                                            благодаря которому она не поднимается выше 100 градусов. Главное отличие
+                                            фена Dyson в быстром и безопасном высушивании волос. В рукоятку встроен
+                                            датчик температуры, благодаря которому она не поднимается выше 100 градусов.
+                                            Главное отличие фена Dyson в быстром и безопасном высушивании волос. В
+                                            рукоятку встроен датчик температуры, благодаря которому она не поднимается
+                                            выше 100 градусов.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tab-slide">
+                                    <div class="tab-slide__sercificate" id="sercificate">
+                                        <div class="tab-slide__sercificate-img"><img
+                                                src="images/sertificate/sertificate 1.jpg" alt=""></div>
+                                        <div class="tab-slide__sercificate-img"><img
+                                                src="images/sertificate/sertificate 2.jpg" alt=""></div>
+                                        <div class="tab-slide__sercificate-img"><img
+                                                src="images/sertificate/sertificate 3.jpg" alt=""></div>
+                                        <div class="tab-slide__sercificate-img"><img
+                                                src="images/sertificate/sertificate 4.jpg" alt=""></div
+                                            class="tab-slide__sercificate-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__faq">
+                <div class="container">
+                    <div class="faq__inner">
+                        <h2 class="faq__title">FAQ — Часто задаваемые вопросы</h2>
+                        <div class="faq__item">
+                            <div class="faq-question">
+                                Главное отличие фена Dyson в быстром и безопасном высушивании
+                                волос?
+                                <button class="faq-question__button" type="button">
+                                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20 1C20 0.447715 19.5523 0 19 0C18.4477 0 18 0.447715 18 1V18H1C0.447715 18 0 18.4477 0 19C0 19.5523 0.447715 20 1 20H18V37C18 37.5523 18.4477 38 19 38C19.5523 38 20 37.5523 20 37V20H37C37.5523 20 38 19.5523 38 19C38 18.4477 37.5523 18 37 18H20V1Z"
+                                            fill="#111111" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">
+                                    Главное отличие фена Dyson в быстром и безопасном
+                                    высушивании волос. В рукоятку встроен датчик температуры,
+                                    благодаря которому она не поднимается выше 100 градусов. В
+                                    комплекте 5 насадок, которые подходят для укладки и сушки на
+                                    разных режимах. Есть практичный черный чехол,
+                                    предназначенный для аккуратной перевозки и хранения.
+                                    Расчески можно использовать отдельно от девайса или во время
+                                    сушки с целью предотвратить запутывание.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq-question">
+                                В рукоятку встроен датчик температуры, благодаря которому она
+                                не поднимается выше 100 градусов?
+                                <button class="faq-question__button" type="button">
+                                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20 1C20 0.447715 19.5523 0 19 0C18.4477 0 18 0.447715 18 1V18H1C0.447715 18 0 18.4477 0 19C0 19.5523 0.447715 20 1 20H18V37C18 37.5523 18.4477 38 19 38C19.5523 38 20 37.5523 20 37V20H37C37.5523 20 38 19.5523 38 19C38 18.4477 37.5523 18 37 18H20V1Z"
+                                            fill="#111111" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">
+                                    Главное отличие фена Dyson в быстром и безопасном
+                                    высушивании волос. В рукоятку встроен датчик температуры,
+                                    благодаря которому она не поднимается выше 100 градусов. В
+                                    комплекте 5 насадок, которые подходят для укладки и сушки на
+                                    разных режимах. Есть практичный черный чехол,
+                                    предназначенный для аккуратной перевозки и хранения.
+                                    Расчески можно использовать отдельно от девайса или во время
+                                    сушки с целью предотвратить запутывание.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq-question">
+                                Главное отличие фена Dyson в быстром и безопасном высушивании
+                                волос?
+                                <button class="faq-question__button" type="button">
+                                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20 1C20 0.447715 19.5523 0 19 0C18.4477 0 18 0.447715 18 1V18H1C0.447715 18 0 18.4477 0 19C0 19.5523 0.447715 20 1 20H18V37C18 37.5523 18.4477 38 19 38C19.5523 38 20 37.5523 20 37V20H37C37.5523 20 38 19.5523 38 19C38 18.4477 37.5523 18 37 18H20V1Z"
+                                            fill="#111111" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">
+                                    Главное отличие фена Dyson в быстром и безопасном
+                                    высушивании волос. В рукоятку встроен датчик температуры,
+                                    благодаря которому она не поднимается выше 100 градусов. В
+                                    комплекте 5 насадок, которые подходят для укладки и сушки на
+                                    разных режимах. Есть практичный черный чехол,
+                                    предназначенный для аккуратной перевозки и хранения.
+                                    Расчески можно использовать отдельно от девайса или во время
+                                    сушки с целью предотвратить запутывание.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq-question">
+                                Главное отличие фена Dyson в быстром и безопасном высушивании
+                                волос?
+                                <button class="faq-question__button" type="button">
+                                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20 1C20 0.447715 19.5523 0 19 0C18.4477 0 18 0.447715 18 1V18H1C0.447715 18 0 18.4477 0 19C0 19.5523 0.447715 20 1 20H18V37C18 37.5523 18.4477 38 19 38C19.5523 38 20 37.5523 20 37V20H37C37.5523 20 38 19.5523 38 19C38 18.4477 37.5523 18 37 18H20V1Z"
+                                            fill="#111111" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">
+                                    Главное отличие фена Dyson в быстром и безопасном
+                                    высушивании волос. В рукоятку встроен датчик температуры,
+                                    благодаря которому она не поднимается выше 100 градусов. В
+                                    комплекте 5 насадок, которые подходят для укладки и сушки на
+                                    разных режимах. Есть практичный черный чехол,
+                                    предназначенный для аккуратной перевозки и хранения.
+                                    Расчески можно использовать отдельно от девайса или во время
+                                    сушки с целью предотвратить запутывание.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq-question">
+                                В рукоятку встроен датчик температуры, благодаря которому она
+                                не поднимается выше 100 градусов?
+                                <button class="faq-question__button" type="button">
+                                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20 1C20 0.447715 19.5523 0 19 0C18.4477 0 18 0.447715 18 1V18H1C0.447715 18 0 18.4477 0 19C0 19.5523 0.447715 20 1 20H18V37C18 37.5523 18.4477 38 19 38C19.5523 38 20 37.5523 20 37V20H37C37.5523 20 38 19.5523 38 19C38 18.4477 37.5523 18 37 18H20V1Z"
+                                            fill="#111111" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">
+                                    Главное отличие фена Dyson в быстром и безопасном
+                                    высушивании волос. В рукоятку встроен датчик температуры,
+                                    благодаря которому она не поднимается выше 100 градусов. В
+                                    комплекте 5 насадок, которые подходят для укладки и сушки на
+                                    разных режимах. Есть практичный черный чехол,
+                                    предназначенный для аккуратной перевозки и хранения.
+                                    Расчески можно использовать отдельно от девайса или во время
+                                    сушки с целью предотвратить запутывание.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="faq__item">
+                            <div class="faq-question">
+                                Главное отличие фена Dyson в быстром и безопасном высушивании
+                                волос?
+                                <button class="faq-question__button" type="button">
+                                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20 1C20 0.447715 19.5523 0 19 0C18.4477 0 18 0.447715 18 1V18H1C0.447715 18 0 18.4477 0 19C0 19.5523 0.447715 20 1 20H18V37C18 37.5523 18.4477 38 19 38C19.5523 38 20 37.5523 20 37V20H37C37.5523 20 38 19.5523 38 19C38 18.4477 37.5523 18 37 18H20V1Z"
+                                            fill="#111111" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">
+                                    Главное отличие фена Dyson в быстром и безопасном
+                                    высушивании волос. В рукоятку встроен датчик температуры,
+                                    благодаря которому она не поднимается выше 100 градусов. В
+                                    комплекте 5 насадок, которые подходят для укладки и сушки на
+                                    разных режимах. Есть практичный черный чехол,
+                                    предназначенный для аккуратной перевозки и хранения.
+                                    Расчески можно использовать отдельно от девайса или во время
+                                    сушки с целью предотвратить запутывание.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__video">
+                <div class="contaier">
+                    <div class="main__video-inner">
+                        <video autoplay muted loop width="100%">
+                            <source src="video/What is Supersonic video.webm" type="video/mp4">
+                            Ваш браузер не поддерживает воспроизведение видео.
+                        </video>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main__related-products">
+                <div class="container">
+                    <div class="main__related-products-inner">
+                        <div class="related__products-title">
+                            <h2>Похожие товары</h2>
+                        </div>
+                        <div class="product-buy__cards">
+                            <div class="product-buy__card-inner">
+                                <div class="product-buy__card" data-price="59990" data-popular="1" data-raiting="4"
+                                    data-new="1">
+                                    <div class="product-buy__img">
+                                        <img src="./images/products/dryer_sonic7-blue.jpg" alt="" />
+                                    </div>
+                                    <p class="product-buy__title">
+                                        Фен Dyson Supersonic HD07 синий медный с 5 насадками
+                                        <br />в чехле и расческамия
+                                    </p>
+                                    <div class="product-buy__card--info">
+                                        <div class="product-buy__availability">
+                                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                            </svg>
+                                            <span>В наличии</span>
+                                        </div>
+                                        <div class="product-buy__wishlist">
+                                            <svg class="product-buy__heart " width="34" height="30" viewBox="0 0 34 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="product-buy__price--curent">
+                                            59 990Р
+                                        </span>
+                                        <div class="product-buy__price--old">
+                                            <span> 69 990 Р </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-buy__add-to-cart">
+                                    <div class="product__quantity">
+                                        <button class="quantity-btn minus">
+                                            <svg width="20" height="4" viewBox="0 0 20 2" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 1H1" stroke="#ABABAB" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                        <span class="quantity-value">1</span>
+                                        <button class="quantity-btn plus">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="add-to-cart">В корзину</button>
+                                </div>
+                            </div>
+                            <div class="product-buy__card-inner">
+                                <div class="product-buy__card" data-price="51990" data-popular="2" data-raiting="1"
+                                    data-new="3">
+                                    <div class="product-buy__img">
+                                        <img src="./images/products/dryer_sonic7.jpg" alt="" />
+                                    </div>
+                                    <p class="product-buy__title">
+                                        Фен Dyson Supersonic HD07
+                                        <br />с 5 насадками и подставкой
+                                    </p>
+                                    <div class="product-buy__card--info">
+                                        <div class="product-buy__availability">
+                                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                            </svg>
+                                            <span>В наличии</span>
+                                        </div>
+                                        <div class="product-buy__wishlist">
+                                            <svg class="product-buy__heart" width="34" height="30" viewBox="0 0 34 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="product-buy__price--curent">
+                                            47 990Р
+                                        </span>
+                                        <div class="product-buy__price--old">
+                                            <span> 51 990 Р </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-buy__add-to-cart">
+                                    <div class="product__quantity">
+                                        <button class="quantity-btn minus">
+                                            <svg width="20" height="4" viewBox="0 0 20 2" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 1H1" stroke="#ABABAB" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                        <span class="quantity-value">1</span>
+                                        <button class="quantity-btn plus">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="add-to-cart">В корзину</button>
+                                </div>
+                            </div>
+                            <div class="product-buy__card-inner">
+                                <div class="product-buy__card" data-price="46990" data-popular="" data-raiting="4"
+                                    data-new="1">
+                                    <div class="product-buy__img">
+                                        <img src="./images/products/dryer_sonic4.jpg" alt="" />
+                                    </div>
+                                    <p class="product-buy__title">
+                                        Фен Dyson Supersonic 4 насадки HD03 с чехлом для
+                                        хранения цвет сирень
+                                    </p>
+                                    <div class="product-buy__card--info">
+                                        <div class="product-buy__availability">
+                                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                            </svg>
+                                            <span>В наличии</span>
+                                        </div>
+                                        <div class="product-buy__wishlist">
+                                            <svg class="product-buy__heart" width="34" height="30" viewBox="0 0 34 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="product-buy__price--curent">
+                                            46 990Р
+                                        </span>
+                                        <div class="product-buy__price--old">
+                                            <span> 51 990 Р </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-buy__add-to-cart">
+                                    <div class="product__quantity">
+                                        <button class="quantity-btn minus">
+                                            <svg width="20" height="4" viewBox="0 0 20 2" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 1H1" stroke="#ABABAB" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                        <span class="quantity-value">1</span>
+                                        <button class="quantity-btn plus">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="add-to-cart">В корзину</button>
+                                </div>
+                            </div>
+                            <div class="product-buy__card-inner">
+                                <div class="product-buy__card" data-price="46990" data-popular="" data-raiting="4"
+                                    data-new="1">
+                                    <div class="product-buy__img">
+                                        <img src="./images/products/dryer_sonic4.jpg" alt="" />
+                                    </div>
+                                    <p class="product-buy__title">
+                                        Фен Dyson Supersonic 4 насадки HD03 с чехлом для
+                                        хранения цвет сирень
+                                    </p>
+                                    <div class="product-buy__card--info">
+                                        <div class="product-buy__availability">
+                                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                            </svg>
+                                            <span>В наличии</span>
+                                        </div>
+                                        <div class="product-buy__wishlist">
+                                            <svg class="product-buy__heart" width="34" height="30" viewBox="0 0 34 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="product-buy__price--curent">
+                                            46 990Р
+                                        </span>
+                                        <div class="product-buy__price--old">
+                                            <span> 51 990 Р </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-buy__add-to-cart">
+                                    <div class="product__quantity">
+                                        <button class="quantity-btn minus">
+                                            <svg width="20" height="4" viewBox="0 0 20 2" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 1H1" stroke="#ABABAB" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                        <span class="quantity-value">1</span>
+                                        <button class="quantity-btn plus">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="add-to-cart">В корзину</button>
+                                </div>
+                            </div>
+                            <div class="product-buy__card-inner">
+                                <div class="product-buy__card" data-price="46990" data-popular="" data-raiting="4"
+                                    data-new="1">
+                                    <div class="product-buy__img">
+                                        <img src="./images/products/dryer_sonic4.jpg" alt="" />
+                                    </div>
+                                    <p class="product-buy__title">
+                                        Фен Dyson Supersonic 4 насадки HD03 с чехлом для
+                                        хранения цвет сирень
+                                    </p>
+                                    <div class="product-buy__card--info">
+                                        <div class="product-buy__availability">
+                                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                            </svg>
+                                            <span>В наличии</span>
+                                        </div>
+                                        <div class="product-buy__wishlist">
+                                            <svg class="product-buy__heart" width="34" height="30" viewBox="0 0 34 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="product-buy__price--curent">
+                                            46 990Р
+                                        </span>
+                                        <div class="product-buy__price--old">
+                                            <span> 51 990 Р </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-buy__add-to-cart">
+                                    <div class="product__quantity">
+                                        <button class="quantity-btn minus">
+                                            <svg width="20" height="4" viewBox="0 0 20 2" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 1H1" stroke="#ABABAB" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                        <span class="quantity-value">1</span>
+                                        <button class="quantity-btn plus">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="add-to-cart">В корзину</button>
+                                </div>
+                            </div>
+                            <div class="product-buy__card-inner">
+                                <div class="product-buy__card" data-price="46990" data-popular="" data-raiting="4"
+                                    data-new="1">
+                                    <div class="product-buy__img">
+                                        <img src="./images/products/dryer_sonic4.jpg" alt="" />
+                                    </div>
+                                    <p class="product-buy__title">
+                                        Фен Dyson Supersonic 4 насадки HD03 с чехлом для
+                                        хранения цвет сирень
+                                    </p>
+                                    <div class="product-buy__card--info">
+                                        <div class="product-buy__availability">
+                                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="6.5" cy="6.5" r="6.5" fill="#68AE5C" />
+                                            </svg>
+                                            <span>В наличии</span>
+                                        </div>
+                                        <div class="product-buy__wishlist">
+                                            <svg class="product-buy__heart" width="34" height="30" viewBox="0 0 34 30"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15.7785 28.6195L3.64672 15.9863C0.229572 12.428 0.444758 6.59342 4.11392 3.31844C7.754 0.0694071 13.2733 0.700319 16.1498 4.69425L16.6335 5.3657L17.1171 4.69425C19.9937 0.700319 25.5128 0.0694071 29.153 3.31844C32.8222 6.59342 33.0374 12.428 29.6202 15.9863L17.4885 28.6195C17.0163 29.1112 16.2507 29.1112 15.7785 28.6195Z"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span class="product-buy__price--curent">
+                                            46 990Р
+                                        </span>
+                                        <div class="product-buy__price--old">
+                                            <span> 51 990 Р </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-buy__add-to-cart">
+                                    <div class="product__quantity">
+                                        <button class="quantity-btn minus">
+                                            <svg width="20" height="4" viewBox="0 0 20 2" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 1H1" stroke="#ABABAB" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                        <span class="quantity-value">1</span>
+                                        <button class="quantity-btn plus">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M10.0003 19L10.0346 10M10.0003 1L10.0346 10M10.0346 10H19M10.0346 10H0.999999"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="add-to-cart">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="related__products-button">
+                            <button class="related__products-button--show show__more-btn" type="button">
+                                Показать еще
+                                <svg width="25" height="24" viewBox="0 0 27 25" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M22.7031 22.722L1.22199 2.13588C0.823245 1.75375 0.809777 1.12073 1.19191 0.721988C1.57403 0.323245 2.20706 0.309777 2.6058 0.691906L24.1919 21.3786V4.44733C24.1919 3.89504 24.6396 3.44733 25.1919 3.44733C25.7442 3.44733 26.1919 3.89504 26.1919 4.44733V23.722C26.1919 24.2743 25.7442 24.722 25.1919 24.722H5.03635C4.48406 24.722 4.03635 24.2743 4.03635 23.722C4.03635 23.1697 4.48406 22.722 5.03635 22.722H22.7031Z"
+                                        fill="#111111" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+            </section>
+
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__inner">
+                    <div class="footer__logo col-logo">
+                        <a class="footer__logo-link" href="#">
+                            <svg width="183" height="77" viewBox="9 0 180 77" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="183" height="77" fill="url(#pattern0_388_4580)" />
+                                <defs>
+                                    <pattern id="pattern0_388_4580" patternContentUnits="objectBoundingBox" width="1"
+                                        height="1">
+                                        <use xlink:href="#image0_388_4580" transform="scale(0.000595238 0.00141466)" />
+                                    </pattern>
+                                    <image id="image0_388_4580" width="1680" height="707" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="footer__col-info">
+                        <div class="footer__col-text">
+                            <p class="footer__col-copy">Интернет-магазин dysmarket.ru, 2022 © Все права защищены.</p>
+                            <p class="footer__logo-text">
+                                Использование материалов с данного сайта разрешено только с согласия владельца. Владелец
+                                оставляет за собой право воспользоваться 146 статьей УК РФ при нарушении авторских и
+                                смежных
+                                прав. Все предоставленная на сайте информация ни при каких условиях не является
+                                публичной
+                                офертой, определяемой положениями Статьи 437 (2) Гражданского кодекса РФ.
+                            </p>
+                        </div>
+                        <div class="footer__col-contact">
+                            <h3>Отдел логистики:</h3>
+                            <address class="footer__col-tel">
+                                <a class="footer__col-number" href="tel:+79065505555">
+                                    +7 (999) 800-45-54
+                                </a>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/product.js"></script>
+</body>
